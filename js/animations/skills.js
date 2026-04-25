@@ -10,7 +10,13 @@ export const initSkills = () => {
   if (!container || orbitItems.length === 0) return;
 
   const totalItems = orbitItems.length;
-  let radius = window.innerWidth > 768 ? 380 : 180;
+  const calculateRadius = () => {
+    if (window.innerWidth > 1024) return 380;
+    if (window.innerWidth > 768) return 280;
+    if (window.innerWidth > 480) return 180;
+    return 140; // Small phones
+  };
+  let radius = calculateRadius();
   let activeIndex = -1; // Start with -1 to trigger initial set
   
   // Interaction State
@@ -142,6 +148,6 @@ export const initSkills = () => {
   loop();
 
   window.addEventListener('resize', () => {
-    radius = window.innerWidth > 768 ? 380 : 180;
+    radius = calculateRadius();
   });
 };

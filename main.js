@@ -14,9 +14,37 @@ gsap.registerPlugin(ScrollTrigger);
 class App {
   constructor() {
     this.initLenis();
+    this.initMobileMenu();
     this.initMagneticEffects();
     this.initAnimations();
     this.initSectionTransitions();
+  }
+
+  initMobileMenu() {
+    const toggle = document.querySelector('#menu-toggle');
+    const menu = document.querySelector('#mobile-menu');
+    const links = document.querySelectorAll('.mobile-nav-link');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        this.lenis.stop();
+      } else {
+        this.lenis.start();
+      }
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        this.lenis.start();
+      });
+    });
   }
 
   initLenis() {

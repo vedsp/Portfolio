@@ -39,7 +39,7 @@ export const initContact = () => {
   if (btn) {
     btn.addEventListener('mouseenter', () => {
       gsap.to('.outlined-text', {
-        opacity: 0.8,
+        textShadow: '0 0 20px rgba(197, 251, 69, 0.8), 0 0 40px rgba(197, 251, 69, 0.5)',
         letterSpacing: '0.05em',
         duration: 0.6
       });
@@ -65,7 +65,7 @@ export const initContact = () => {
 
     btn.addEventListener('mouseleave', () => {
       gsap.to('.outlined-text', {
-        opacity: 0.3,
+        textShadow: '0 0 10px rgba(197, 251, 69, 0.5), 0 0 25px rgba(197, 251, 69, 0.3)',
         letterSpacing: 'normal',
         duration: 0.6
       });
