@@ -1,258 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vedant P.</title>
-    <meta name="description" content="A modern, highly interactive personal portfolio website built with GSAP, Lenis, and cinematic animations." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <div class="noise"></div>
-    <!-- Preloader -->
-    <div id="loader" class="loader">
-      <div class="loader-content">
-        <span class="loader-text">INITIALIZING</span>
-        <div class="loader-progress"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vedant P.</title>
+  <meta name="description"
+    content="A modern, highly interactive personal portfolio website built with GSAP, Lenis, and cinematic animations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5fb45' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6l8 12 8-12'/></svg>">
+</head>
+
+<body>
+  <div class="noise"></div>
+  <!-- Preloader -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <span class="loader-text">INITIALIZING</span>
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <aside class="floating-socials">
+    <div class="social-line"></div>
+    <a href="https://github.com/vedsp" target="_blank" class="floating-link" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/vedsp/" target="_blank" class="floating-link" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a href="https://x.com/VEDANTPRABHU10" target="_blank" class="floating-link" aria-label="X (Twitter)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+    </a>
+  </aside>
+
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#hero" class="logo">
+        <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6L12 18L20 6" stroke="var(--accent-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="logo-pulse" />
+        </svg>
+        VEDANT PRABHU
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Scene -->
+    <section id="hero" class="scene hero">
+      <div class="hero-container">
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            <span class="line line-1"><span class="word">Building on the web.</span></span>
+            <span class="line line-2"><span class="word">Exploring security</span></span>
+          </h1>
+        </div>
+        <div class="hero-sub">
+          <p class="hero-description">Building immersive digital experiences through code and motion.</p>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/vedsp" target="_blank" class="hero-social-link">GH</a>
+          <a href="https://www.linkedin.com/in/vedsp/" target="_blank" class="hero-social-link">LI</a>
+          <a href="https://x.com/VEDANTPRABHU10" target="_blank" class="hero-social-link">X</a>
+        </div>
+        <div class="hero-parallax-bg">
+          <canvas id="hero-canvas"></canvas>
+          <div class="parallax-layer layer-1"></div>
+          <div class="parallax-layer layer-2"></div>
+          <div class="parallax-layer layer-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section — flows directly below hero -->
+    <section id="projects" class="projects-flow">
+
+      <!-- Section Label -->
+      <div class="projects-label-row">
+        <span class="projects-label-num">Selected Work</span>
+        <div class="projects-label-line"></div>
+        <span class="projects-label-count">02 Projects</span>
+      </div>
+
+      <!-- RAKSHAM -->
+      <article class="project-item" data-project="raksham">
+        <div class="project-item-inner layout-img-left">
+          <div class="project-image-block">
+            <div class="project-image-clip">
+              <a href="https://raksham-omega.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <img src="/raksham-preview.png" alt="Raksham" class="project-full-img" />
+              </a>
+            </div>
+          </div>
+          <div class="project-text-block">
+            <div class="project-index-label">01</div>
+            <div class="project-heading-mask">
+              <h2 class="project-heading">RAKSHAM</h2>
+            </div>
+            <div class="project-subheading-mask">
+              <p class="project-subheading">Phishing Detection Platform</p>
+            </div>
+            <p class="project-desc">Detects phishing messages and scam calls in real time across 4 languages using AI.
+              Guards users from digital fraud at both message and voice level.</p>
+            <div class="project-pill-row">
+              <span class="pill">Text Analysis</span>
+              <span class="pill">Audio AI</span>
+              <span class="pill">Live Detection</span>
+            </div>
+            <a href="https://raksham-omega.vercel.app/" target="_blank" class="project-cta">Visit Site <span
+                class="cta-arrow">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GitSense -->
+      <article class="project-item" data-project="gitsense">
+        <div class="project-item-inner layout-img-right">
+          <div class="project-text-block">
+            <div class="project-index-label">02</div>
+            <div class="project-heading-mask">
+              <h2 class="project-heading">GITSENSE</h2>
+            </div>
+            <div class="project-subheading-mask">
+              <p class="project-subheading">Repository Intelligence CLI</p>
+            </div>
+            <p class="project-desc">Extracts deep commit insights and visualizes your entire repository structure. Built
+              for developers who need to understand codebases fast.</p>
+            <div class="project-pill-row">
+              <span class="pill">CLI</span>
+              <span class="pill">Git API</span>
+              <span class="pill">Visualization</span>
+            </div>
+            <a href="https://github.com/vedsp/GitSense" target="_blank" class="project-cta">View Code <span
+                class="cta-arrow">↗</span></a>
+          </div>
+          <div class="project-image-block">
+            <div class="project-image-clip">
+              <div class="terminal-preview">
+                <div class="terminal-header">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="terminal-title">git-sense</span>
+                </div>
+                <div class="terminal-body">
+                  <p class="cmd">> <span class="typing-text"></span><span class="cursor">_</span></p>
+                  <p class="res terminal-hidden">[SUCCESS] Insights extracted...</p>
+                  <p class="graph terminal-hidden">|-- Main<br>|&nbsp;&nbsp; |-- Logic<br>|&nbsp;&nbsp; `-- UI Layer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- About Scene -->
+    <section id="about" class="scene about">
+      <div class="container">
+        <div class="about-container-grid">
+          <div class="about-left">
+            <h2 class="section-title">ABOUT</h2>
+            <div class="about-text-wrapper">
+              <p class="about-text" data-reveal>
+                <span class="about-line-1">I build high-performance web experiences with a deep focus on security and
+                  cinematic motion.</span>
+                <span class="about-line-2">Transforming complex logic into fluid, interactive stories.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="about-supporting">
+              <div class="supporting-block">
+                <span class="supporting-label">CORE FOCUS</span>
+                <ul class="focus-list">
+                  <li>Web Development <span class="focus-line"></span></li>
+                  <li>Cybersecurity <span class="focus-line"></span></li>
+                  <li>Performance <span class="focus-line"></span></li>
+                  <li>Creative Motion <span class="focus-line"></span></li>
+                </ul>
+              </div>
+
+              <div class="supporting-block">
+                <span class="supporting-label">EXPLORING</span>
+                <div class="exploring-tags">
+                  <span>System Design</span>
+                  <span>/</span>
+                  <span>Security Research</span>
+                  <span>/</span>
+                  <span>Three.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Skills Scene -->
+    <section id="skills" class="scene skills">
+      <div class="skills-interactive-orbit">
+
+        <div class="skills-center-stage">
+          <div class="center-glow-effect"></div>
+          <div class="active-skill-content">
+            <div class="active-skill-name-wrapper">
+              <h3 class="active-skill-name">JavaScript</h3>
+            </div>
+            <div class="active-skill-desc-wrapper">
+              <p class="active-skill-description">Powering the modern web with scalable, interactive, and
+                high-performance applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="orbit-canvas">
+          <div class="orbit-item" data-skill="JavaScript"
+            data-desc="Powering the modern web with scalable, interactive, and high-performance applications.">
+            <span class="orbit-label">JS</span>
+          </div>
+          <div class="orbit-item" data-skill="Python"
+            data-desc="Building robust backends, AI models, and automated security tools with clean code.">
+            <span class="orbit-label">PY</span>
+          </div>
+          <div class="orbit-item" data-skill="GSAP"
+            data-desc="The standard for ultra-smooth web animation and complex scroll-driven storytelling.">
+            <span class="orbit-label">GSAP</span>
+          </div>
+          <div class="orbit-item" data-skill="React"
+            data-desc="Architecting component-driven UIs with declarative state and modern hook patterns.">
+            <span class="orbit-label">REACT</span>
+          </div>
+          <div class="orbit-item" data-skill="Cybersecurity"
+            data-desc="Implementing advanced security protocols, penetration testing, and digital forensics.">
+            <span class="orbit-label">SEC</span>
+          </div>
+          <div class="orbit-item" data-skill="SQL"
+            data-desc="Designing efficient relational architectures and complex query optimizations for data.">
+            <span class="orbit-label">SQL</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Scene -->
+    <section id="contact" class="scene contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <h2 class="contact-heading">LET'S CREATE <br> <span class="outlined-text">SOMETHING BOLD</span></h2>
+          <div class="contact-cta">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vedantprabhu17@gmail.com" target="_blank"
+              class="cta-button" id="contact-btn">
+              <span class="btn-text">GET IN TOUCH</span>
+              <div class="btn-circle">
+                <span class="btn-arrow">↗</span>
+              </div>
+            </a>
+          </div>
+          <div class="contact-status">
+            <span class="status-dot"></span>
+            <p>Currently open to new opportunities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>
+          <svg class="footer-logo" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+            <path d="M4 6L12 18L20 6" stroke="var(--accent-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          © 2026 VEDANT PRABHU — ALWAYS BUILDING
+        </p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/vedsp/" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://x.com/VEDANTPRABHU10" target="_blank" class="social-link">X</a>
+          <a href="https://github.com/vedsp" target="_blank" class="social-link">Github</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Case Study Overlay -->
+  <div id="case-study-overlay" class="cs-overlay">
+    <div class="cs-backdrop"></div>
+
+    <button class="cs-close-btn" aria-label="Close Case Study">
+      <span class="cs-close-icon"></span>
+      <span class="cs-close-text">CLOSE</span>
+    </button>
+
+    <div class="cs-scroll-container">
+      <div class="cs-content-wrapper">
+
+        <!-- Hero Section: The Shared Element Target -->
+        <header class="cs-hero">
+          <div class="cs-hero-image-container">
+            <!-- Shared image will be flipped here -->
+            <div class="cs-shared-element-target"></div>
+          </div>
+          <div class="cs-hero-text">
+            <h1 class="cs-title">PROJECT TITLE</h1>
+            <p class="cs-subtitle">PROJECT SUBTITLE</p>
+          </div>
+        </header>
+
+        <!-- Narrative Sections -->
+        <div class="cs-narrative">
+          <section class="cs-section" data-label="Challenge">
+            <div class="cs-section-header">
+              <span class="cs-section-num">01</span>
+              <h2 class="cs-section-title">The Challenge</h2>
+            </div>
+            <div class="cs-section-body">
+              <p class="cs-text">Detailed explanation of the problem we were trying to solve. Focusing on the technical
+                constraints and user needs.</p>
+            </div>
+          </section>
+
+          <section class="cs-section" data-label="Solution">
+            <div class="cs-section-header">
+              <span class="cs-section-num">02</span>
+              <h2 class="cs-section-title">The Solution</h2>
+            </div>
+            <div class="cs-section-body">
+              <p class="cs-text">How the platform was architected to handle real-time detection across multiple
+                languages and formats.</p>
+              <div class="cs-section-image-box">
+                <!-- Placeholder for secondary images/visuals -->
+                <div class="cs-placeholder-img"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="cs-section" data-label="Impact">
+            <div class="cs-section-header">
+              <span class="cs-section-num">03</span>
+              <h2 class="cs-section-title">The Impact</h2>
+            </div>
+            <div class="cs-section-body">
+              <p class="cs-text">Quantifiable results and the final outcome of the project's implementation in the real
+                world.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Footer/CTA -->
+        <footer class="cs-footer">
+          <a href="#" target="_blank" class="cs-visit-btn">VISIT LIVE SITE ↗</a>
+        </footer>
+
       </div>
     </div>
 
+    <!-- Progress Indicator -->
+    <div class="cs-progress-bar"></div>
+    <div class="cs-section-markers"></div>
+  </div>
 
-    <header class="header">
-      <nav class="nav">
-        <a href="#hero" class="logo">VEDANT PRABHU</a>
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Work</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <script type="module" src="/main.js"></script>
+</body>
 
-    <main id="main-content">
-      <!-- Hero Scene -->
-      <section id="hero" class="scene hero">
-        <div class="hero-container">
-          <div class="hero-title-wrapper">
-            <h1 class="hero-title">
-              <span class="line line-1"><span class="word">Building on the web.</span></span>
-              <span class="line line-2"><span class="word">Exploring security</span></span>
-            </h1>
-          </div>
-          <div class="hero-sub">
-            <p class="hero-description">Building immersive digital experiences through code and motion.</p>
-          </div>
-          <div class="hero-parallax-bg">
-            <div class="parallax-layer layer-1"></div>
-            <div class="parallax-layer layer-2"></div>
-            <div class="parallax-layer layer-3"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section — flows directly below hero -->
-      <section id="projects" class="projects-flow">
-
-        <!-- Section Label -->
-        <div class="projects-label-row">
-          <span class="projects-label-num">Selected Work</span>
-          <div class="projects-label-line"></div>
-          <span class="projects-label-count">02 Projects</span>
-        </div>
-
-        <!-- RAKSHAM -->
-        <article class="project-item" data-project="raksham">
-          <div class="project-item-inner layout-img-left">
-            <div class="project-image-block">
-              <div class="project-image-clip">
-                <a href="https://raksham-omega.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  <img src="/raksham-preview.png" alt="Raksham" class="project-full-img" />
-                </a>
-              </div>
-            </div>
-            <div class="project-text-block">
-              <div class="project-index-label">01</div>
-              <div class="project-heading-mask">
-                <h2 class="project-heading">RAKSHAM</h2>
-              </div>
-              <div class="project-subheading-mask">
-                <p class="project-subheading">Phishing Detection Platform</p>
-              </div>
-              <p class="project-desc">Detects phishing messages and scam calls in real time across 4 languages using AI. Guards users from digital fraud at both message and voice level.</p>
-              <div class="project-pill-row">
-                <span class="pill">Text Analysis</span>
-                <span class="pill">Audio AI</span>
-                <span class="pill">Live Detection</span>
-              </div>
-              <a href="https://raksham-omega.vercel.app/" target="_blank" class="project-cta">Visit Site <span class="cta-arrow">↗</span></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- GitSense -->
-        <article class="project-item" data-project="gitsense">
-          <div class="project-item-inner layout-img-right">
-            <div class="project-text-block">
-              <div class="project-index-label">02</div>
-              <div class="project-heading-mask">
-                <h2 class="project-heading">GITSENSE</h2>
-              </div>
-              <div class="project-subheading-mask">
-                <p class="project-subheading">Repository Intelligence CLI</p>
-              </div>
-              <p class="project-desc">Extracts deep commit insights and visualizes your entire repository structure. Built for developers who need to understand codebases fast.</p>
-              <div class="project-pill-row">
-                <span class="pill">CLI</span>
-                <span class="pill">Git API</span>
-                <span class="pill">Visualization</span>
-              </div>
-              <a href="#" class="project-cta">View Code <span class="cta-arrow">↗</span></a>
-            </div>
-            <div class="project-image-block">
-              <div class="project-image-clip">
-                <div class="terminal-preview">
-                  <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">git-sense</span>
-                  </div>
-                  <div class="terminal-body">
-                    <p class="cmd">> <span class="typing-text"></span><span class="cursor">_</span></p>
-                    <p class="res terminal-hidden">[SUCCESS] Insights extracted...</p>
-                    <p class="graph terminal-hidden">|-- Main<br>|&nbsp;&nbsp; |-- Logic<br>|&nbsp;&nbsp; `-- UI Layer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </section>
-
-      <!-- About Scene -->
-      <section id="about" class="scene about">
-        <div class="container">
-          <div class="about-container-grid">
-            <div class="about-left">
-              <h2 class="section-title">ABOUT</h2>
-              <div class="about-text-wrapper">
-                <p class="about-text" data-reveal>
-                  <span class="about-line-1">I build high-performance web experiences with a deep focus on security and cinematic motion.</span>
-                  <span class="about-line-2">Transforming complex logic into fluid, interactive stories.</span>
-                </p>
-              </div>
-            </div>
-
-            <div class="about-right">
-              <div class="about-supporting">
-                <div class="supporting-block">
-                  <span class="supporting-label">CORE FOCUS</span>
-                  <ul class="focus-list">
-                    <li>Web Development <span class="focus-line"></span></li>
-                    <li>Cybersecurity <span class="focus-line"></span></li>
-                    <li>Performance <span class="focus-line"></span></li>
-                    <li>Creative Motion <span class="focus-line"></span></li>
-                  </ul>
-                </div>
-                
-                <div class="supporting-block">
-                  <span class="supporting-label">EXPLORING</span>
-                  <div class="exploring-tags">
-                    <span>System Design</span>
-                    <span>/</span>
-                    <span>Security Research</span>
-                    <span>/</span>
-                    <span>Three.js</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <!-- Skills Scene -->
-      <section id="skills" class="scene skills">
-        <div class="skills-interactive-orbit">
-          
-          <div class="skills-center-stage">
-            <div class="center-glow-effect"></div>
-            <div class="active-skill-content">
-              <div class="active-skill-name-wrapper">
-                <h3 class="active-skill-name">JavaScript</h3>
-              </div>
-              <div class="active-skill-desc-wrapper">
-                <p class="active-skill-description">Powering the modern web with scalable, interactive, and high-performance applications.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="orbit-canvas">
-            <div class="orbit-item" data-skill="JavaScript" data-desc="Powering the modern web with scalable, interactive, and high-performance applications.">
-              <span class="orbit-label">JS</span>
-            </div>
-            <div class="orbit-item" data-skill="Python" data-desc="Building robust backends, AI models, and automated security tools with clean code.">
-              <span class="orbit-label">PY</span>
-            </div>
-            <div class="orbit-item" data-skill="GSAP" data-desc="The standard for ultra-smooth web animation and complex scroll-driven storytelling.">
-              <span class="orbit-label">GSAP</span>
-            </div>
-            <div class="orbit-item" data-skill="React" data-desc="Architecting component-driven UIs with declarative state and modern hook patterns.">
-              <span class="orbit-label">REACT</span>
-            </div>
-            <div class="orbit-item" data-skill="Cybersecurity" data-desc="Implementing advanced security protocols, penetration testing, and digital forensics.">
-              <span class="orbit-label">SEC</span>
-            </div>
-            <div class="orbit-item" data-skill="SQL" data-desc="Designing efficient relational architectures and complex query optimizations for data.">
-              <span class="orbit-label">SQL</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Contact Scene -->
-      <section id="contact" class="scene contact">
-        <div class="container">
-          <div class="contact-wrapper">
-            <h2 class="contact-heading">LET'S CREATE <br> <span class="outlined-text">SOMETHING BOLD</span></h2>
-            <div class="contact-cta">
-              <a href="mailto:hello@example.com" class="cta-button" id="contact-btn">
-                <span class="btn-text">GET IN TOUCH</span>
-                <div class="btn-circle">
-                  <span class="btn-arrow">↗</span>
-                </div>
-              </a>
-            </div>
-            <div class="contact-status">
-              <span class="status-dot"></span>
-              <p>Currently open to new opportunities</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-bottom">
-          <p>© 2024 Vedant P.</p>
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/vedsp/" target="_blank" class="social-link">LinkedIn</a>
-            <a href="https://x.com/VEDANTPRABHU10" target="_blank" class="social-link">X</a>
-            <a href="https://github.com/vedsp" target="_blank" class="social-link">Github</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script type="module" src="/main.js"></script>
-  </body>
 </html>

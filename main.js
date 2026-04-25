@@ -2,8 +2,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { initHero } from './js/animations/hero.js';
+import { initHeroThree } from './js/animations/heroThree.js';
 import { initAbout } from './js/animations/about.js';
 import { initProjects } from './js/animations/projects.js';
+import { initCaseStudy } from './js/animations/caseStudy.js';
 import { initSkills } from './js/animations/skills.js';
 import { initContact } from './js/animations/contact.js';
 
@@ -100,8 +102,10 @@ class App {
 
   startMasterTimeline() {
     initHero();
+    initHeroThree();
     initAbout();
     initProjects();
+    initCaseStudy(this.lenis);
     initSkills();
     initContact();
     

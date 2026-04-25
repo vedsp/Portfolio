@@ -4,52 +4,52 @@ export const initAbout = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#about',
-      start: 'top 75%',
+      start: 'top 80%', // Slightly later reveal
       toggleActions: 'play none none reverse'
     }
   });
 
-  // Masked Line-by-Line Reveal
+  // Masked Line-by-Line Reveal (Standardized)
   tl.from('.section-title', {
-    y: 20,
+    y: 30,
     opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
+    duration: 1.2,
+    ease: 'expo.out'
   })
   .from('.about-line-1', {
     y: '100%',
-    duration: 1.5,
+    duration: 1.4,
     ease: 'expo.out'
-  }, '-=0.5')
+  }, '-=0.8')
   .from('.about-line-2', {
     y: '100%',
     duration: 1.2,
     ease: 'expo.out'
-  }, '-=1.2')
+  }, '-=1.1')
   .from('.supporting-block', {
-    x: 20,
+    y: 20,
     opacity: 0,
     duration: 1,
-    stagger: 0.2,
-    ease: 'power3.out'
-  }, '-=0.8')
+    stagger: 0.15,
+    ease: 'expo.out'
+  }, '-=0.9')
   .from('.focus-list li', {
     x: 10,
     opacity: 0,
     duration: 0.8,
-    stagger: 0.1,
-    ease: 'power2.out'
-  }, '-=0.6');
+    stagger: 0.05,
+    ease: 'power3.out'
+  }, '-=0.7');
 
-  // Slow Vertical Drift on Scroll
+  // Slow Vertical Drift (Tightened)
   gsap.to('.about-left', {
     scrollTrigger: {
       trigger: '#about',
       start: 'top bottom',
       end: 'bottom top',
-      scrub: 1.5
+      scrub: 1
     },
-    y: -80,
+    y: -60,
     ease: 'none'
   });
 
@@ -58,21 +58,9 @@ export const initAbout = () => {
       trigger: '#about',
       start: 'top bottom',
       end: 'bottom top',
-      scrub: 1
+      scrub: 0.8
     },
-    y: -40,
-    ease: 'none'
-  });
-
-  // Background Shift
-  gsap.to('body', {
-    scrollTrigger: {
-      trigger: '#about',
-      start: 'top center',
-      end: 'bottom center',
-      scrub: true,
-    },
-    backgroundColor: '#121212',
+    y: -30,
     ease: 'none'
   });
 

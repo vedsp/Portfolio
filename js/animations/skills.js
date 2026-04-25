@@ -105,23 +105,23 @@ export const initSkills = () => {
     
     const tl = gsap.timeline();
     tl.to([centerName, centerDesc], {
-      y: 10,
+      y: 15,
       opacity: 0,
-      filter: 'blur(10px)',
-      duration: 0.3,
+      filter: 'blur(12px)',
+      duration: 0.4,
       ease: 'power2.in',
       onComplete: () => {
         centerName.textContent = name;
         centerDesc.textContent = desc;
-        gsap.set([centerName, centerDesc], { y: -10 });
+        gsap.set([centerName, centerDesc], { y: -15 });
       }
     })
     .to([centerName, centerDesc], {
       y: 0,
       opacity: 1,
       filter: 'blur(0px)',
-      duration: 0.5,
-      ease: 'power3.out'
+      duration: 0.8,
+      ease: 'expo.out'
     });
 
     gsap.fromTo(centerGlow, 

@@ -15,11 +15,11 @@ export const initProjects = () => {
     const pills      = item.querySelector('.project-pill-row');
     const cta        = item.querySelector('.project-cta');
 
-    // ── Image clip-path reveal (curtain wipe) ──
+    // ── Image clip-path reveal (Standardized) ──
     if (clip) {
       gsap.to(clip, {
         clipPath: 'inset(0% 0 0 0)',
-        ease: 'power4.inOut',
+        ease: 'expo.inOut',
         duration: 1.8,
         scrollTrigger: {
           trigger: item,
@@ -29,21 +29,18 @@ export const initProjects = () => {
       });
     }
 
-    // ── Progressive Zoom Out (Start at 1.0, Zoom OUT only) ──
+    // ── Progressive Zoom Out (Enhanced) ──
     if (img) {
-      // Starting at 1.0 ensures we never "zoom in" beyond the image's original size
-      // Scaling down to 0.65/0.7 creates the "fully zoom out" feel as you scroll
-      const finalScale = item.dataset.project === 'gitsense' ? 0.6 : 0.7;
-
+      const finalScale = item.dataset.project === 'gitsense' ? 0.65 : 0.75;
       gsap.fromTo(img, 
-        { scale: 1.0, opacity: 1 },
+        { scale: 1.1, opacity: 1 },
         {
           scale: finalScale,
           ease: 'none',
           scrollTrigger: {
             trigger: item,
-            start: 'top bottom', // Start scaling as soon as it enters
-            end: 'bottom top',   // End scaling as it leaves
+            start: 'top bottom',
+            end: 'bottom top',
             scrub: true,
           },
         }
@@ -58,13 +55,49 @@ export const initProjects = () => {
       opacity: 1,
       stagger: 0.1,
       duration: 1.2,
-      ease: 'power3.out',
+      ease: 'expo.out',
       scrollTrigger: {
         trigger: item,
-        start: 'top 75%',
+        start: 'top 80%',
         toggleActions: 'play none none none',
       },
     });
+
+    // ── 3D Tilt Interaction (GSAP) ──
+    const inner = item.querySelector('.project-item-inner');
+    if (inner) {
+      item.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = item.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+        
+        // Main container tilt
+        gsap.to(inner, {
+          rotateY: x * 10,
+          rotateX: -y * 10,
+          duration: 0.8,
+          ease: 'power2.out',
+          transformPerspective: 1000
+        });
+
+        // Layered Parallax (Fake Depth)
+        if (indexLabel) gsap.to(indexLabel, { x: x * 20, y: y * 20, duration: 1, ease: 'power2.out' });
+        if (heading) gsap.to(heading, { x: x * 15, y: y * 15, duration: 1, ease: 'power2.out' });
+        if (pills) gsap.to(pills, { x: x * 10, y: y * 10, duration: 1, ease: 'power2.out' });
+        if (img) gsap.to(img, { x: -x * 30, y: -y * 30, duration: 1.2, ease: 'power2.out' });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        gsap.to([inner, indexLabel, heading, pills, img], {
+          rotateX: 0,
+          rotateY: 0,
+          x: 0,
+          y: 0,
+          duration: 1.5,
+          ease: 'elastic.out(1, 0.3)'
+        });
+      });
+    }
 
     // ── Project Drift (Subtle) ──
     gsap.to(item, {
@@ -74,7 +107,7 @@ export const initProjects = () => {
         end: 'bottom top',
         scrub: 1
       },
-      y: -50,
+      y: -40,
       ease: 'none'
     });
 
@@ -109,7 +142,7 @@ function typeTerminal(item) {
       setTimeout(() => {
         hiddenLines.forEach((line) => {
           line.style.display = 'block';
-          gsap.fromTo(line, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 });
+          gsap.fromTo(line, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: 'expo.out' });
         });
       }, 500);
     }
