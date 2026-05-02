@@ -13,7 +13,7 @@ export const initProjects = () => {
     const subheading = item.querySelector('.project-subheading');
     const desc       = item.querySelector('.project-desc');
     const pills      = item.querySelector('.project-pill-row');
-    const cta        = item.querySelector('.project-cta');
+    const ctas       = item.querySelectorAll('.project-cta');
 
     // ── Image clip-path reveal (Standardized) ──
     if (clip) {
@@ -31,7 +31,7 @@ export const initProjects = () => {
 
     // ── Progressive Zoom Out (Enhanced) ──
     if (img) {
-      const finalScale = item.dataset.project === 'gitsense' ? 0.65 : 0.75;
+      const finalScale = (item.dataset.project === 'gitsense' || item.dataset.project === 'patchwork') ? 0.65 : 0.75;
       gsap.fromTo(img, 
         { scale: 1.1, opacity: 1 },
         {
@@ -48,7 +48,7 @@ export const initProjects = () => {
     }
 
     // ── Progressive Text Reveal ──
-    const textElements = [indexLabel, heading, subheading, desc, pills, cta].filter(el => el !== null);
+    const textElements = [indexLabel, heading, subheading, desc, pills, ...ctas].filter(el => el !== null);
     
     gsap.to(textElements, {
       y: 0,
